@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Notificação</title>
+    <style>
+        header{
+            width: 100%;
+            display: flex;
+            max-height: 250px;
+            border-bottom: 1px solid black;
+        }
+        main{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+        }
+        h1{
+            font-size: 48px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            padding: 20px;
+        }
+        h2{
+            font-size: 48px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+        }
+
+        #notifications{
+            background-color: rgb(160, 155, 155);
+            padding: 10px;
+            width: 800px;
+            height: 200px;
+            border-radius: 20px;
+            overflow-y: auto;
+        }
+
+    </style>
+    <script>
+        // Função para conectar ao WebSocket
+        const socket = new WebSocket("ws://localhost:8000/ws");
+
+        // Quando a conexão WebSocket for aberta
+        socket.onopen = function(event) {
+        console.log("Conectado ao WebSocket!");
+        };
+
+        // Quando uma mensagem for recebida do servidor
+        socket.onmessage = function(event) {
+        const notification = event.data;
+        // Exibe a notificação na tela
+        const notificationsDiv = document.getElementById("notifications");
+        const newNotification = document.createElement("div");
+        newNotification.textContent = notification;
+        notificationsDiv.appendChild(newNotification);
+        };
+
+        // Quando a conexão WebSocket for fechada
+        socket.onclose = function(event) {
+        console.log("Desconectado do WebSocket.");
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Sistema de Notificação de APIs</h1>
+    </header>
+    <main>
+        <h2>Notificação:</h2>
+        <div id="notifications">
+            
+        </div>
+
+    </main>
+</body>
+</html>
