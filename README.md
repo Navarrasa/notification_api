@@ -22,20 +22,20 @@
 - Passo 1:
 Abra o diretório clonado em seu lugar de preferencia no dispositivo (Abra com o Explorer ou com o Visual Studio Code diretamente);
 - Passo 2 (Explorer):
-Na aba de caminhos do explorer (ao lado esquerdo da aba de pesquisas), digite ´cmd´
+Na aba de caminhos do explorer (ao lado esquerdo da aba de pesquisas), digite `cmd`
 - Passo 3 (Explorer):
-No cmd (Terminal de Comandos do Windows), digite ´code .´
+No cmd (Terminal de Comandos do Windows), digite `code .`
 - Passo 4 (Visual Studio Code):
-Com o VSCode aberto, aperte as teclas ´Ctrl + J´, um atalho para abrir o cmd do VSCode
+Com o VSCode aberto, aperte as teclas `Ctrl + J`, um atalho para abrir o cmd do VSCode
 - Passo 5 (Visual Studio Code):
-Digite os comandos ´python -m venv .env´, aguarde a operação finalizar,
+Digite os comandos `python -m venv .env`, aguarde a operação finalizar,
 Digite .env/Scripts/activate,
 Digite pip install -r requirements.txt
 Aguarde as operações finalizarem.
 - Passo 6:
-Execute o comando ´uvicorn main:app --reload´
+Execute o comando `uvicorn main:app --reload`
 - Passo 7:
-Verifique as notificações das API's que desejar no arquivo ´server.py´, adicionando URL's de API's na linha 29, uma lista com URL's de API's.
+Verifique as notificações das API's que desejar no arquivo `server.py`, adicionando URL's de API's na linha 29, uma lista com URL's de API's.
 
 
 
